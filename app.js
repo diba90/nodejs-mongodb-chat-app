@@ -8,6 +8,10 @@ const app = require("express")();
 
 const http = require("http").Server(app);
 
-http.listen(300, () => {
+const userRoute = require("./routes/userRoute");
+
+app.use("/", userRoute);
+
+http.listen(3000, () => {
   console.log("Server is Running");
 });
