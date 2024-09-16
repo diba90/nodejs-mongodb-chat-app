@@ -10,8 +10,10 @@ const http = require("http").Server(app);
 
 const userRoute = require("./routes/userRoute");
 
+const { PORT } = process.env;
+
 app.use("/", userRoute);
 
-http.listen(3000, () => {
-  console.log("Server is Running");
+http.listen(PORT, () => {
+  console.log(`Server is Running on Port ${PORT}`);
 });
